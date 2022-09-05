@@ -15,11 +15,11 @@ public class QRCodeController {
 
 
     @PostMapping
-    public ResponseEntity<ResponseDto> convertToQRCode(@RequestBody Url url) throws IOException, WriterException {
+    public ResponseDto convertToQRCode(@RequestBody Url url) throws IOException, WriterException {
         String qrCode = QRCodeUtil.generateQRCodeImage(url.getUrl(),200,200);
         ResponseDto responseDto = new ResponseDto();
         responseDto.setUrl(qrCode);
-        return ResponseEntity.ok(responseDto);
+        return responseDto;
     }
 
 }
