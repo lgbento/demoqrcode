@@ -19,8 +19,8 @@ public class QRCodeController {
         String qrCode = QRCodeUtil.generateQRCodeImage(url.getUrl(),200,200);
         ResponseDto responseDto = new ResponseDto();
         responseDto.setUrl(qrCode);
-        String aprovacaoExternaResultDtoToJson = JsonUtil.getGsonParser().toJson(responseDto);
-        return aprovacaoExternaResultDtoToJson;
+        String aprovacaoExternaResultDtoToJson = JsonUtil.getGsonParser().toJson(qrCode);
+        return qrCode;
     }
 
 }
